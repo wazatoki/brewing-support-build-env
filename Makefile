@@ -11,3 +11,8 @@ build: clean
 	docker exec brewing_support_node /bin/sh -c "cd brew_support/frontend && npm run build" && \
 	cp -r $(ROOT_DIR)golang/build $(ROOT_DIR) && \
 	cp -r $(ROOT_DIR)node/brew_support/frontend/dist $(ROOT_DIR)build/resources/frontend
+
+.PHONY: run
+run:
+	cd $(ROOT_DIR)build && \
+	./*.bin
